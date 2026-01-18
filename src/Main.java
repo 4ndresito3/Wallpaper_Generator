@@ -12,6 +12,8 @@ public class Main {
         int[] res = getResolution();
         System.out.println("Resolucion: " + res[0] + "x" + res[1]);
         w = new Window(res[0],res[1]);
+        
+        w.loopDraw();
 
     }
 
