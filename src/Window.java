@@ -13,6 +13,7 @@ public class Window {
     private Frame window;
     private Canvas canvas;
     private BufferStrategy bf;
+    public BlocksManager manager;
     public Block block;
     public boolean saved;
 
@@ -29,6 +30,7 @@ public class Window {
         canvas.createBufferStrategy(2);
         bf = canvas.getBufferStrategy();
 
+        manager = new BlocksManager(x, y);
         block = new Block(x,y);
 
         window.addWindowListener(new WindowAdapter() {
@@ -41,11 +43,7 @@ public class Window {
     public void loopDraw(){
         while (true) {
             Graphics g = bf.getDrawGraphics();
-            for(int i = 0; i < window.getWidth() ; i++){
-                for(int j = 0; j < window.getHeight() ; j++){
-                    g.drawImage(block.texture.getImage(),i * PIXELS ,j * PIXELS, null);
-                }
-            }
+            manager.drawBlocks(g, block);
             saveImage();
             g.dispose();
             bf.show();
@@ -54,11 +52,7 @@ public class Window {
     private void saveImage(){
         BufferedImage image = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics g = image.getGraphics();
-        for(int i = 0; i < window.getWidth() ; i++){
-            for(int j = 0; j < window.getHeight() ; j++){
-                g.drawImage(block.texture.getImage(),i * PIXELS ,j * PIXELS, null);
-            }
-        }
+        manager.drawBlocks(g, block);
         // g2.dispose();
         try {
             ImageIO.write(image, "png", new File("output/result.png"));
