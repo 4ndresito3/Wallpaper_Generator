@@ -27,4 +27,20 @@ public class Segment {
     public Direction getDirection() {
         return dir;
     }
+
+
+    //we are just interested in the starting position?? Im not sure 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Segment segment = (Segment) o;
+        return startX == segment.startX &&
+                startY == segment.startY;
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(startX, startY, size, dir);
+    }
 }
