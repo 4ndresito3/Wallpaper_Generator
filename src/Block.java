@@ -2,8 +2,8 @@ import java.awt.*;
 import javax.swing.ImageIcon;
 
 public class Block {
-    private final int MAX_BLOCKS_X = 40;
-    private final int MAX_BLOCKS_Y = 20;
+    private final int MAX_BLOCKS_X = Settings.MAX_BLOCKS_X;
+    private final int MAX_BLOCKS_Y = Settings.MAX_BLOCKS_Y;
     private Color color;
     private int blockWidth;
     private int blockHeight;
@@ -17,7 +17,7 @@ public class Block {
     }
 
     public Block(int screenWidth, int screenHeight){
-        this(screenWidth, screenHeight, Color.RED);
+        this(screenWidth, screenHeight, Settings.DEFAULT_COLOR);
     }
     public int getBlockWidth() {
         return blockWidth;

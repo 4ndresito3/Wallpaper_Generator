@@ -7,7 +7,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 public class Window {
-    private final int PIXELS = 36;
+    private final int PIXELS = Settings.PIXELS;
     private int width;
     private int height;
     private Frame window;

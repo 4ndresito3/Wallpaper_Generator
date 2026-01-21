@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class BlocksManager {
     
-    private final int PIXELS = 36;
+    private final int PIXELS = Settings.PIXELS;
     private int width;
     private int height;
     private ArrayList<Shapes> shapesList;
