@@ -15,13 +15,14 @@ public class BlocksManager {
 
     //this method will generate the random shapes
     private void generateShapes() {
-
+        Position pos = new Position( Director.getRandomScreenPoint(width), Director.getRandomScreenPoint(height) );
+        
     }
 
     public void drawBlocks(Graphics g,Block block) {
         for(int i = 0; i < width ; i++){
             for(int j = 0; j < height ; j++){
-                g.drawImage(block.texture.getImage(),i * PIXELS ,j * PIXELS, null);
+                g.drawImage(block.texture.getImage(),i * block.getBlockWidth() ,j * block.getBlockHeight(), null);
             }
         }
     }

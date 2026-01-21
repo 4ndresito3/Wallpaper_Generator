@@ -15,7 +15,6 @@ public class Window {
     private BufferStrategy bf;
     public BlocksManager manager;
     public Block block;
-    public boolean saved;
 
     public Window(int x, int y) {
         window = new Frame("Wallpaper generator");
