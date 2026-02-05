@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 
 public class Window {
     private final int PIXELS = Settings.PIXELS;
@@ -21,9 +22,9 @@ public class Window {
         height = y;
         width = x;
         // window.setLayout(new FlowLayout());
-        window.setSize(x,y);
+        // window.setSize(x,y);
         window.setVisible(true);
-
+        window.setExtendedState(window.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         canvas = new Canvas();
         window.add(canvas);
         canvas.createBufferStrategy(2);
