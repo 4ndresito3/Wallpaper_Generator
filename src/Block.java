@@ -5,13 +5,13 @@ public class Block {
     private final int MAX_BLOCKS_X = Settings.MAX_BLOCKS_X;
     private final int MAX_BLOCKS_Y = Settings.MAX_BLOCKS_Y;
     private Color color;
-    private int blockWidth;
-    private int blockHeight;
+    private int blockWidth = Settings.PIXELS;
+    private int blockHeight = Settings.PIXELS;
     public ImageIcon texture;
 
     public Block(int screenWidth, int screenHeight, Color color) {
-        this.blockWidth = screenWidth / MAX_BLOCKS_X;
-        this.blockHeight = screenHeight / MAX_BLOCKS_Y;
+        // this.blockWidth = screenWidth / MAX_BLOCKS_X;
+        // this.blockHeight = screenHeight / MAX_BLOCKS_Y;
         this.color = color;
         this.texture = new ImageIcon("resources/default.png");
     }
